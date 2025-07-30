@@ -1,0 +1,8 @@
+.venv
+.vscode
+.env
+data
+
+src\__pycache__
+src\database_tools\__pycache__
+src\interfaces\__pycache__
