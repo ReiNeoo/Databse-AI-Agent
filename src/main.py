@@ -18,7 +18,7 @@ def main():
 
     obj = CreateDatabaseQuery(groq_config, database_config)
     asyncio.run(
-        obj.create_tabels(
+        obj.create_tables(
             "create a table that contains id and age columns. Tabel name must 'engine-test-1'"
         )
     )

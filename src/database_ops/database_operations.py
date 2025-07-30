@@ -7,10 +7,10 @@ class DatabaseOps:
         self.connection_params = connection_params
         self.conn = self._init_database(self.connection_params)
 
-    def _init_database(self, connection_params) -> None:
+    def _init_database(self, connection_params):
         print("connected_database")
         return psycopg2.connect(**connection_params)
- 
+
     def get_tables(self) -> List[Tuple[str]]:
         query = """
             SELECT table_name 

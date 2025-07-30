@@ -6,7 +6,7 @@ import logging
 logging.basicConfig(level=logging.ERROR)
 
 
-class InserTable(ToolCore):
+class InsertTable(ToolCore):
     def __init__(self, connection_params):
         super().__init__(connection_params)
         self._init_database(self.connection_params)

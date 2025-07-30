@@ -1,6 +1,5 @@
-from interfaces.i_database_expression import IExpression
-from communicate_groq import GroqProcessor
-from src.database_ops.database_operations import DatabaseOps
+from src.interfaces.i_database_expression import IExpression
+from src.communicate_groq import GroqProcessor
 from typing import Dict, Any
 
 
