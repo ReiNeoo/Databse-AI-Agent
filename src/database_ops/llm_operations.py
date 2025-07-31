@@ -3,15 +3,14 @@ from src.communicate_groq import GroqProcessor
 from typing import Dict, Any
 
 
-class CreateDatabaseQuery(IExpression):
+class CreateDatabaseQuery:
     def __init__(self, llm_configs: Dict[str, Any]):
         super().__init__()
         self.llm_configs = llm_configs
-        self.llm_object = GroqProcessor(self.llm_configs)
+        self.llm_connection = GroqProcessor(self.llm_configs)
         self.system_prompt = """
-            You are a highly skilled SQL database expert. Your task is to generate SQL CREATE TABLE statements based on user descriptions for a PosgreSQL DATABASE. Always follow standard SQL syntax, and make sure to:
+            You are a highly skilled SQL database expert. Your task is to generate SQL statements based on user descriptions for a PosgreSQL DATABASE. Always follow standard SQL syntax, and make sure to:
             
-            The MOST important thing you need to do is write the SQL statement WITHOUT ANY OTHER STATEMENTS. Don't make any other comments.
             
                 -Choose appropriate data types (e.g., INT, VARCHAR, DATE, BOOLEAN, etc.) based on the field descriptions.
 
@@ -25,6 +24,7 @@ class CreateDatabaseQuery(IExpression):
 
                 -Do not include insert or select statements. Only generate the CREATE TABLE SQL code.
                 
+            The MOST important thing is, you need to do is write the SQL statement WITHOUT ANY OTHER STATEMENTS. Don't make any other comments.
                 
                 Example output format:
                 ""CREATE TABLE engine-test-1 (
@@ -33,5 +33,4 @@ class CreateDatabaseQuery(IExpression):
                         );""
                         
             JUST RETURN SQL STATEMENT PLEASE, JUST SQL STATEMENT
-            
         """

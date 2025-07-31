@@ -5,9 +5,9 @@ from typing import Dict, Any, Tuple, List
 class DatabaseOps:
     def __init__(self, connection_params: Dict[str, Any]):
         self.connection_params = connection_params
-        self.conn = self._init_database(self.connection_params)
+        self.conn = self._init_database_connection(self.connection_params)
 
-    def _init_database(self, connection_params):
+    def _init_database_connection(self, connection_params):
         print("connected_database")
         return psycopg2.connect(**connection_params)
 
