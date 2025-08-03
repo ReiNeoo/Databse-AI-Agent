@@ -15,6 +15,7 @@ class Tool(ITool):
         self.llm_service = llm_service
 
     async def agent_tool(self, agent_input_prompt: str) -> None:
+        print(f"input prompt: {agent_input_prompt}")
         try:
             query = [
                 await self.llm_service.llm_connection.invoke(

@@ -1,6 +1,6 @@
 import psycopg2
 from typing import List
-from database_tools.tool_core import ToolFunctionCore
+from src.database_tools.core.tool_core import ToolFunctionCore
 import logging
 
 

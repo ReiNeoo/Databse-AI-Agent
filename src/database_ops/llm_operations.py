@@ -25,12 +25,6 @@ class CreateDatabaseQuery:
                 -Do not include insert or select statements. Only generate the CREATE TABLE SQL code.
                 
             The MOST important thing is, you need to do is write the SQL statement WITHOUT ANY OTHER STATEMENTS. Don't make any other comments.
-                
-                Example output format:
-                ""CREATE TABLE engine-test-1 (
-                          id INT,
-                          age INT
-                        );""
-                        
+                    
             JUST RETURN SQL STATEMENT PLEASE, JUST SQL STATEMENT
         """
